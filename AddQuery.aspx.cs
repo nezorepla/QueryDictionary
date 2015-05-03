@@ -39,13 +39,6 @@ public partial class AddQuery : System.Web.UI.Page
     protected void Button1_Click(object sender, EventArgs e)
     {
 
-//        CREATE TABLE [dbo].[QD_Dim_Querys](
-//    [INTCODE] [int] IDENTITY(1,1) NOT NULL,
-//    CREATOR VARCHAR(15),
-//    DT DATETIME,
-//    DSC VARCHAR(MAX),
-//    QUERY TEXT	
-//) ON [PRIMARY]
         string user = "A25318";
         string query = txtQuery.Text.ToString();
         string dsc = txtDsc.Text.ToString();
