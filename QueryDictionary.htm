@@ -4,9 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>jQuery UI Autocomplete - Custom data and display</title>
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="/resources/demos/style.css">
-    <style>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+      <style>
         #project-label
         {
             display: block;
@@ -71,11 +70,11 @@
 
             $("#project").autocomplete({
                 minLength: 0,
-//                source: projects,
+                //                source: projects,
                 source: function (request, response) {
                     var matcher = new RegExp($.ui.autocomplete.escapeRegex(request.term), "i");
                     response($.grep(projects, function (data) {
-                        value = data.label || data.value || value;
+                        value = data.label || data.desc;
                         return matcher.test(value) || matcher.test(normalize(value));
                     }));
                 },
@@ -88,7 +87,7 @@
                     $("#project-id").val(ui.item.value);
                     $("#project-description").html(ui.item.desc);
                     $("#column").html(ui.item.desc);
-                    // $("#project-icon").attr("src", "images/" + ui.item.icon);
+                   $("#project-icon").attr("src", "images/" + ui.item.icon);
 
                     return false;
                 }
