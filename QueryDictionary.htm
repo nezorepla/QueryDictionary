@@ -73,8 +73,11 @@
                 //                source: projects,
                 source: function (request, response) {
                     var matcher = new RegExp($.ui.autocomplete.escapeRegex(request.term), "i");
-                    response($.grep(projects, function (data) {
-                        value = data.label || data.desc;
+                    response($.grep(projects, function (data) { 
+                        
+                                 //    value = data.label || data.desc;
+                        value = data.label;
+                        value += data.desc;
                         return matcher.test(value) || matcher.test(normalize(value));
                     }));
                 },
